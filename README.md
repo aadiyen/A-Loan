@@ -87,11 +87,8 @@ Animating from the enemy's POV — building the death cutscene by placing a came
 
 
 
-Links
-
 Play on itch.io
 
-
-
+https://adiyen.itch.io/a-loan
 
 Built solo by @adiyen
