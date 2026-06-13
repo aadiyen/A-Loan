@@ -63,7 +63,20 @@ In-game settings menu to adjust graphics quality, FPS cap, anti-aliasing, and mo
 
 Tech Stack
 
-Godotengine , blender for 3D models , audacity for sounds and music
+Godotengine
+-Game Engine , Gdscript
+Blender
+-All 3D models and assets
+Audacity
+-Sound editing and music 
+NavigationAgent3D
+-Enemy pathfinding and NavMesh
+RayCast3D
+-Enemy vision and kill detection
+AnimationPlayer
+-Door/drawer animations, death sequence
+Movie Maker Mode
+-Intro cutscene 
 
 
 Development Notes
