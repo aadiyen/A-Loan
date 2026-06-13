@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://80rciif4jg6x"]
+
+[ext_resource type="Script" uid="uid://b8j0fjr1fktl5" path="res://script/light_switch.gd" id="1_ldygq"]
+[ext_resource type="AudioStream" uid="uid://cntqhm4fabwmg" path="res://sounds/dragon-studio-button-press-382713.mp3" id="2_e7wg2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7wg2"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4oh8"]
+albedo_color = Color(0.8226427, 0.8226427, 0.8226427, 1)
+roughness = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldygq"]
+albedo_color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jvjns"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtc5t"]
+albedo_color = Color(0.37716255, 0.37716258, 0.37716255, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ldygq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jvjns"]
+size = Vector3(0.25506592, 0.47357178, 0.3790264)
+
+[node name="light_switch" type="Node3D" unique_id=1422533356]
+script = ExtResource("1_ldygq")
+on_mat = SubResource("StandardMaterial3D_e7wg2")
+off_mat = SubResource("StandardMaterial3D_h4oh8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1252242010]
+transform = Transform3D(0.18323025, 0, 0, 0, 0.5049323, 0, 0, 0, 0.3597625, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ldygq")
+mesh = SubResource("BoxMesh_jvjns")
+
+[node name="off" type="MeshInstance3D" parent="." unique_id=1600299574]
+transform = Transform3D(-0.06989437, 0.1758739, 0, -0.103771046, -0.11845881, 0, 0, 0, 0.11304075, -0.08314882, -0.01047948, 0)
+material_override = SubResource("StandardMaterial3D_rtc5t")
+mesh = SubResource("BoxMesh_ldygq")
+
+[node name="on" type="MeshInstance3D" parent="." unique_id=1723606344]
+transform = Transform3D(0.057405073, 0.18841034, 0, -0.11116794, 0.09729163, 0, 0, 0, 0.11304077, -0.08314882, -0.01047948, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_rtc5t")
+mesh = SubResource("BoxMesh_ldygq")
+
+[node name="light_switch" type="StaticBody3D" parent="." unique_id=88695196]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="light_switch" unique_id=1308177256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037200928, 0.0059509277, 0.0033750534)
+shape = SubResource("BoxShape3D_jvjns")
+
+[node name="button" type="AudioStreamPlayer3D" parent="." unique_id=308327972]
+stream = ExtResource("2_e7wg2")

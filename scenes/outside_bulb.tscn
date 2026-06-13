@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://wc0id8dpqw7o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbiu0"]
+albedo_color = Color(0.42288277, 0.4228828, 0.4228828, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vbiu0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n216i"]
+emission_enabled = true
+emission = Color(1, 1, 0.5647059, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_yo17a"]
+
+[node name="outside_bulb" type="Node3D" unique_id=1698796084]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1388250714]
+transform = Transform3D(1.3200704, 0, 0, 0, 0.22784549, 0, 0, 0, 1.3421767, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_vbiu0")
+mesh = SubResource("CylinderMesh_vbiu0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=2091854562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6259947, 0)
+material_override = SubResource("StandardMaterial3D_n216i")
+mesh = SubResource("SphereMesh_yo17a")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D2" unique_id=1941124252]
+light_bake_mode = 1
+distance_fade_enabled = true

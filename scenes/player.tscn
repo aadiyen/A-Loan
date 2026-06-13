@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ch44y2g1fset0"]
+
+[ext_resource type="Script" uid="uid://beaqg70ywsxri" path="res://script/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://cbv16sngomrnb" path="res://script/fp_camera.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://bi0mpmp2dxvv8" path="res://script/ray_cast_3d.gd" id="2_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://dlipl4xoket48" path="res://ui/player_ui.tscn" id="4_dqkch"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
+
+[node name="player" type="CharacterBody3D" unique_id=696817364]
+script = ExtResource("1_3vyb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=185996120]
+visible = false
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=450016962]
+shape = SubResource("CapsuleShape3D_g2els")
+
+[node name="fp_camera" type="Camera3D" parent="." unique_id=105677088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6289099, -0.050095677)
+script = ExtResource("2_g2els")
+
+[node name="head" type="Node3D" parent="fp_camera" unique_id=432930146]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.038238823, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="fp_camera" unique_id=1967286325]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.10202281, -1.1648473, 0, 2.6199682, 0.045359716, 0, -0.038238823, -0.42671978)
+script = ExtResource("2_qhqgy")
+
+[node name="flashlight" type="SpotLight3D" parent="fp_camera" unique_id=1411986269]
+light_energy = 5.0
+spot_range = 100.0
+spot_angle_attenuation = 3.0
+
+[node name="player_ui" parent="." unique_id=1646500701 instance=ExtResource("4_dqkch")]

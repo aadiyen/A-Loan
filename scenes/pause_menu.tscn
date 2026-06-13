@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dwltfc6wtgvuk"]
+
+[node name="pause_menu" type="CanvasLayer" unique_id=1852508144]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=741572679]
+offset_right = 372.0
+offset_bottom = 650.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1080786847]
+offset_left = 362.0
+offset_right = 372.0
+offset_bottom = 648.0
+color = Color(0.46289635, 0, 0.0448528, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=573238412]
+offset_left = 44.0
+offset_top = 1.0
+offset_right = 325.0
+offset_bottom = 101.0
+theme_override_font_sizes/normal_font_size = 70
+text = "PAUSED"
+
+[node name="resume" type="Button" parent="." unique_id=1709860853]
+offset_left = 54.0
+offset_top = 106.0
+offset_right = 294.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 45
+text = "Resume"
+
+[node name="main_menu" type="Button" parent="." unique_id=17180208]
+offset_left = 54.0
+offset_top = 414.0
+offset_right = 294.0
+offset_bottom = 485.0
+theme_override_font_sizes/font_size = 45
+text = "Main Menu"
+
+[node name="quit" type="Button" parent="." unique_id=1971348477]
+offset_left = 54.0
+offset_top = 529.0
+offset_right = 307.0
+offset_bottom = 600.0
+theme_override_font_sizes/font_size = 45
+text = "Quit Game"
+
+[node name="resume2" type="Button" parent="." unique_id=1179663544]
+offset_left = 54.0
+offset_top = 304.0
+offset_right = 294.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 45
+text = "Controls"
+
+[node name="controls" type="Button" parent="." unique_id=1162503238]
+offset_left = 54.0
+offset_top = 199.0
+offset_right = 294.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 45
+text = "Settings"

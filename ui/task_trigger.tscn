@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cwndskebemkdu"]
+
+[ext_resource type="Script" uid="uid://50j71v64m2t5" path="res://ui/task_trigger.gd" id="1_hbip0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_movot"]
+size = Vector3(2.2045898, 4.131714, 1)
+
+[node name="task_trigger" type="Area3D" unique_id=506869939]
+script = ExtResource("1_hbip0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1552979415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4638672, 0, 0)
+shape = SubResource("BoxShape3D_movot")
+debug_color = Color(0.9435504, 0.19952306, 0.34352338, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="enter_trigger"]

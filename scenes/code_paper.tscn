@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://busbwcdii7rru"]
+
+[ext_resource type="Script" uid="uid://g3t17t04mk25" path="res://script/code_paper.gd" id="1_wedvw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r4dxp"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wedvw"]
+noise = SubResource("FastNoiseLite_r4dxp")
+as_normal_map = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsnb8"]
+albedo_color = Color(0.44136545, 0.44136554, 0.44136536, 1)
+normal_enabled = true
+normal_texture = SubResource("NoiseTexture2D_wedvw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hhk6h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4dxp"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_wedvw"]
+text = "0000"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r4dxp"]
+size = Vector3(0.3959961, 0.04925537, 0.9958801)
+
+[node name="code_paper" type="RigidBody3D" unique_id=763937675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033867717, -0.7869681)
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_wedvw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1822935691]
+transform = Transform3D(0.2112693, 0, 0, 0, 4.6769233, 0, 0, 0, 0.5012779, 0, 0.33018512, 0.11720157)
+material_override = SubResource("StandardMaterial3D_xsnb8")
+mesh = SubResource("PlaneMesh_hhk6h")
+
+[node name="code_text" type="MeshInstance3D" parent="." unique_id=580280331]
+transform = Transform3D(0.0018770769, 2.1596937, 0.00033509685, -0.02972444, -0.02348406, 0.030784206, 2.378629, -0.001997767, 0.00038442924, 0, 0.3555476, 0.11488885)
+material_override = SubResource("StandardMaterial3D_r4dxp")
+mesh = SubResource("TextMesh_wedvw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1224118031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014892578, 0.33236694, 0.11970711)
+shape = SubResource("BoxShape3D_r4dxp")
+
+[connection signal="body_entered" from="." to="." method="hit_obj"]

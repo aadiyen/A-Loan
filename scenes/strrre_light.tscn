@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://drhwocro3274y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm5nh"]
+albedo_color = Color(0.3953672, 0.39536718, 0.39536715, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y27ws"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uofj7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hv5c3"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_bm5nh"]
+
+[node name="strrre_light" type="Node3D" unique_id=1882407206]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=865088780]
+transform = Transform3D(0.46246904, 0, 0, 0, 19.420479, 0, 0, 0, 0.42145485, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bm5nh")
+mesh = SubResource("BoxMesh_y27ws")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1668880196]
+transform = Transform3D(1.9911203, 0, 0, 0, 0.39457524, 0, 0, 0, 5.7887936, 0, 9.892889, 2.2604923)
+material_override = SubResource("StandardMaterial3D_bm5nh")
+mesh = SubResource("BoxMesh_uofj7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1047968814]
+transform = Transform3D(0.998972, 0, 0, 0, 0.10964163, 0, 0, 0, 3.7127984, 0, 9.671136, 2.7310092)
+material_override = SubResource("StandardMaterial3D_hv5c3")
+mesh = SubResource("BoxMesh_bm5nh")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D3" unique_id=145858462]
+transform = Transform3D(1.0010291, 0, 0, 0, -1.7622702e-08, 66.94818, 0, -0.40316042, -2.9263979e-06, 0, 0, 0.3190264)
+light_energy = 20.0
+light_bake_mode = 1
+spot_range = 16.206322
+spot_angle = 28.449886

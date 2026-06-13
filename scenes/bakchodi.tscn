@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://d35br8qpcyixm"]
+
+[ext_resource type="Texture2D" uid="uid://cc8dtccvifrn8" path="res://assets/textures/game_title.png" id="1_16ioi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_unr6f"]
+load_path = "res://.godot/imported/Screenshot 2026-05-16 133548.png-6131b87361b244f1eef1acc80808bab1.ctex"
+
+[node name="bakchodi" type="Control" unique_id=2062560620]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2069886259]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=458067180]
+position = Vector2(-2.9999962, 0)
+scale = Vector2(0.639181, 0.6790124)
+texture = SubResource("CompressedTexture2D_unr6f")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer" unique_id=626128942]
+position = Vector2(604, 110)
+scale = Vector2(1, 0.6253333)
+texture = ExtResource("1_16ioi")
