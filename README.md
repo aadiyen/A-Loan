@@ -91,4 +91,4 @@ Play on itch.io
 
 https://adiyen.itch.io/a-loan
 
-Built solo by @adiyen
+Built solo by @aadiyen
