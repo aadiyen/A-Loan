@@ -55,12 +55,12 @@ func _process(delta: float) -> void:
 				speed = 4.0  
 		if chasing:
 			if $jessy/AnimationPlayer.speed_scale != 2.5:
-				$jessy/AnimationPlayer.speed_scale = 2.5  # ✅ chase fast
+				$jessy/AnimationPlayer.speed_scale = 2.5  #  chase fast
 			if speed != 3.5:
 				speed = 3.5  # chase speed  alag
 
 		if chasing:
-			if chase_timer < 15.0:  # ✅ 15 se badhakar 25 seconds
+			if chase_timer < 15.0:  #  15 se badhakar 25 seconds
 				chase_timer += 1 * delta
 			else:
 				chase_timer = 0.0
