@@ -3,7 +3,7 @@ A-Loan
 
 A first-person 3D horror game built in Godot 4 — my first complete 3D game.
 
-<img width="480" height="270" alt="A-Loan game trailer" src="https://github.com/user-attachments/assets/6fc3f145-9256-4643-8f14-b2ae8ae7ea05" />
+<img width="520" height="310" alt="A-Loan game trailer" src="https://github.com/user-attachments/assets/6fc3f145-9256-4643-8f14-b2ae8ae7ea05" />
 
 
 
