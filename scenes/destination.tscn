@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ci6qkxasjx72m"]
+
+[ext_resource type="Script" uid="uid://dbdjpliu7n6mq" path="res://script/destination.gd" id="1_ot7h8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ot7h8"]
+
+[node name="destination" type="Node3D" unique_id=430631249]
+script = ExtResource("1_ot7h8")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=975345691]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=929214781]
+shape = SubResource("BoxShape3D_ot7h8")
+debug_color = Color(0.44217655, 0.24392566, 0.9226236, 0.41960785)
+
+[connection signal="body_entered" from="Area3D" to="." method="enter_trigger"]

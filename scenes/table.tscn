@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c3a5ispwsr2sm"]
+
+[ext_resource type="Texture2D" uid="uid://cs6gpslqlsqy4" path="res://assets/textures/rough_wood_diff_1k.jpg" id="1_02ppr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eotx8"]
+albedo_color = Color(0.37413925, 0.37413928, 0.37413922, 1)
+albedo_texture = ExtResource("1_02ppr")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gu86w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_02ppr"]
+size = Vector3(2.8720703, 0.5057068, 1.3131104)
+
+[node name="table" type="Node3D" unique_id=1990021189]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1701617612]
+transform = Transform3D(2.7314448, 0, 0, 0, 0.07168615, 0, 0, 0, 1.4153996, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_eotx8")
+mesh = SubResource("BoxMesh_gu86w")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MeshInstance3D" unique_id=1275104627]
+transform = Transform3D(0.3661066, 0, 0, 0, 13.949697, 0, 0, 0, 0.7065143, 0, 0, 0)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1764588672]
+transform = Transform3D(0.103470154, 0, 0, 0, 1.044686, 0, 0, 0, 0.09038602, -1.2517236, -0.55453026, 0.5979171)
+material_override = SubResource("StandardMaterial3D_eotx8")
+mesh = SubResource("BoxMesh_gu86w")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MeshInstance3D2" unique_id=1860061430]
+transform = Transform3D(0.3661066, 0, 0, 0, 13.949697, 0, 0, 0, 0.7065143, 0, 0, 0)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1009710430]
+transform = Transform3D(0.103470154, 0, 0, 0, 1.044686, 0, 0, 0, 0.09038602, -1.2517236, -0.55453026, -0.6145766)
+material_override = SubResource("StandardMaterial3D_eotx8")
+mesh = SubResource("BoxMesh_gu86w")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MeshInstance3D3" unique_id=1433369816]
+transform = Transform3D(0.3661066, 0, 0, 0, 13.949697, 0, 0, 0, 0.7065143, 0, 0, 0)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1923815]
+transform = Transform3D(0.103470154, 0, 0, 0, 1.044686, 0, 0, 0, 0.09038602, 1.2364951, -0.55453026, 0.5979171)
+material_override = SubResource("StandardMaterial3D_eotx8")
+mesh = SubResource("BoxMesh_gu86w")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MeshInstance3D4" unique_id=1285416204]
+transform = Transform3D(0.3661066, 0, 0, 0, 13.949697, 0, 0, 0, 0.7065143, 0, 0, 0)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1754975735]
+transform = Transform3D(0.103470154, 0, 0, 0, 1.044686, 0, 0, 0, 0.09038602, 1.2364951, -0.55453026, -0.6145766)
+material_override = SubResource("StandardMaterial3D_eotx8")
+mesh = SubResource("BoxMesh_gu86w")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="MeshInstance3D5" unique_id=705888517]
+transform = Transform3D(0.3661066, 0, 0, 0, 13.949697, 0, 0, 0, 0.7065143, 0, 0, 0)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1091224224]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1272657729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.024902344, -0.13920593, -0.008972168)
+shape = SubResource("BoxShape3D_02ppr")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="StaticBody3D" unique_id=2053710656]
+transform = Transform3D(0.3661066, 0, 0, 0, 13.949697, 0, 0, 0, 0.7065143, 0.024902344, -0.47979736, -0.008972168)
+affect_navigation_mesh = true
+carve_navigation_mesh = true

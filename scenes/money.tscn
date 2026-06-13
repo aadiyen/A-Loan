@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b0kaf1tybfdyh"]
+
+[ext_resource type="Script" uid="uid://ds0qrhdutodil" path="res://script/money.gd" id="1_dia0j"]
+[ext_resource type="Texture2D" uid="uid://bk3so5lg5whug" path="res://assets/textures/money.png" id="1_v42d4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dia0j"]
+albedo_texture = ExtResource("1_v42d4")
+uv1_scale = Vector3(21, 14, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7xgx0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q70k"]
+albedo_texture = ExtResource("1_v42d4")
+uv1_scale = Vector3(17, 252, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v42d4"]
+size = Vector3(1.333313, 0.5111084, 1.3931274)
+
+[node name="money" type="Node3D" unique_id=1092237568]
+script = ExtResource("1_dia0j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1825486262]
+transform = Transform3D(1.6158984, 0, 0, 0, 0.5053227, 0, 0, 0, 1.3695015, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_dia0j")
+mesh = SubResource("BoxMesh_7xgx0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D" unique_id=135521757]
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 2.5
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1936494409]
+transform = Transform3D(1.6483375, 0, 0, 0, 0.5039914, 0, 0, 0, 1.3854495, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_6q70k")
+mesh = SubResource("BoxMesh_7xgx0")
+
+[node name="money" type="StaticBody3D" parent="." unique_id=566426536]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="money" unique_id=170900614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1666565, 0.005065918, 0.0008239746)
+shape = SubResource("BoxShape3D_v42d4")

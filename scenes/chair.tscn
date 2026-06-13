@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://yct7il6p34sn"]
+
+[ext_resource type="Texture2D" uid="uid://cxt2ir7qddilr" path="res://assets/textures/worn_planks_diff_1k.jpg" id="1_i2o7u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fp06"]
+albedo_color = Color(0.4537487, 0.4537487, 0.4537487, 1)
+albedo_texture = ExtResource("1_i2o7u")
+
+[sub_resource type="BoxMesh" id="BoxMesh_x0wnw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i2o7u"]
+size = Vector3(1, 13.83606, 1)
+
+[node name="chair" type="Node3D" unique_id=745649973]
+transform = Transform3D(0.9194382, 0, 0, 0, 0.40599638, 0, 0, 0, 0.79970163, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1610316073]
+transform = Transform3D(1, 0, 0, 0, 0.1802507, 0, 0, 0, 1.095694, -0.004264142, 0, 0)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1339210299]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=599196128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999997, 0.03244824, 5.0582886, 0)
+shape = SubResource("BoxShape3D_i2o7u")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=1537586619]
+transform = Transform3D(-4.3711395e-08, -0.118670985, 0, 0.99999994, -5.187273e-09, 0, 0, 0, 1.095694, -0.34900403, 1.6597614, 0.02710571)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1788965746]
+transform = Transform3D(0.109923795, 0, 0, 0, 2.4372828, 0, 0, 0, 0.124696, 0.39887458, -1.2526919, -0.4537467)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=108619942]
+transform = Transform3D(0.109923795, 0, 0, 0, 2.4372828, 0, 0, 0, 0.124696, 0.35776502, -1.2526919, 0.45514157)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=326533325]
+transform = Transform3D(0.109923795, 0, 0, 0, 2.4372828, 0, 0, 0, 0.124696, -0.4252526, -1.2526919, -0.4537467)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1160282959]
+transform = Transform3D(0.109923795, 0, 0, 0, 2.4372828, 0, 0, 0, 0.124696, -0.4252526, -1.2526919, 0.45514157)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=1243884853]
+transform = Transform3D(0.109923795, 0, 0, 0, 2.4372828, 0, 0, 0, 0.124696, -0.42525265, 0.9467438, -0.4537467)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1785459394]
+transform = Transform3D(0.109923795, 0, 0, 0, 2.4372828, 0, 0, 0, 0.124696, -0.42525265, 0.9467438, 0.45514157)
+material_override = SubResource("StandardMaterial3D_3fp06")
+mesh = SubResource("BoxMesh_x0wnw")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1474177045]
+affect_navigation_mesh = true
+carve_navigation_mesh = true

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bek8knomvicn2"]
+
+[ext_resource type="Script" uid="uid://b7w1lhobj0h84" path="res://script/door_bell.gd" id="1_pijtp"]
+[ext_resource type="AudioStream" uid="uid://capytvfgypj" path="res://sounds/dragon-studio-doorbell-ding-dong-482879.mp3" id="2_8pw38"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pw38"]
+albedo_color = Color(0.46929657, 0.46929651, 0.46929651, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kbana"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pijtp"]
+albedo_color = Color(0.5705783, 0.57057834, 0.57057834, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8pw38"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kbana"]
+size = Vector3(0.5854492, 0.6484375, 0.36572266)
+
+[sub_resource type="Animation" id="Animation_8pw38"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.1106416)]
+}
+
+[sub_resource type="Animation" id="Animation_0lkc4"]
+resource_name = "press"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.56666666, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.1106416), Vector3(0, 0, -0.0031854212), Vector3(0, 0, 0.1106416)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2bwu"]
+_data = {
+&"RESET": SubResource("Animation_8pw38"),
+&"press": SubResource("Animation_0lkc4")
+}
+
+[node name="door_bell" type="Node3D" unique_id=1800932737]
+script = ExtResource("1_pijtp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=443030920]
+transform = Transform3D(0.5925019, 0, 0, 0, 0.6980577, 0, 0, 0, 0.25937858, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_8pw38")
+mesh = SubResource("BoxMesh_kbana")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=888808604]
+transform = Transform3D(0.21446739, 0, 0, 0, 0.27868244, 0, 0, 0, 0.3052847, 0, 0, 0.1106416)
+material_override = SubResource("StandardMaterial3D_pijtp")
+mesh = SubResource("BoxMesh_8pw38")
+
+[node name="door_bell" type="StaticBody3D" parent="." unique_id=145896358]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door_bell" unique_id=279167584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01586914, 0.022460938, 0.052978516)
+shape = SubResource("BoxShape3D_kbana")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2038396173]
+libraries/ = SubResource("AnimationLibrary_j2bwu")
+
+[node name="bell_sound" type="AudioStreamPlayer3D" parent="." unique_id=512755551]
+stream = ExtResource("2_8pw38")

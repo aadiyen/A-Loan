@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bcymypimbubnt"]
+
+[node name="task_ui" type="CanvasLayer" unique_id=1530562845]
+layer = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=751362274]
+z_index = -1
+offset_left = 1073.0
+offset_top = 6.0
+offset_right = 1398.0
+offset_bottom = 144.0
+theme_override_font_sizes/normal_font_size = 30
+text = "Task:"
+
+[node name="task_text" type="RichTextLabel" parent="." unique_id=1940153175]
+z_index = -1
+offset_left = 649.0
+offset_top = 65.0
+offset_right = 1145.0
+offset_bottom = 203.0
+theme_override_font_sizes/normal_font_size = 27
+text = "Sample For Task"
+text_direction = 2

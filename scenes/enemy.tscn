@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://b1x627jkcl462"]
+
+[ext_resource type="Script" uid="uid://colxfqk00gdhs" path="res://script/enemy.gd" id="1_7p1mj"]
+[ext_resource type="PackedScene" uid="uid://h8vqlrdyatpx" path="res://scenes/jessy.tscn" id="2_md0e3"]
+[ext_resource type="AudioStream" uid="uid://bmstf7luaonil" path="res://sounds/stab_tTbqesl.mp3" id="3_4ra3w"]
+[ext_resource type="AudioStream" uid="uid://dqn40mvjg71q2" path="res://sounds/freesound_community-squeaky-jumpscare-2-102254.mp3" id="5_c4w8v"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8tegq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7p1mj"]
+radius = 0.43310547
+
+[sub_resource type="BoxMesh" id="BoxMesh_7p1mj"]
+
+[node name="enemy" type="CharacterBody3D" unique_id=2011531252 groups=["enemy"]]
+script = ExtResource("1_7p1mj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=322740464]
+visible = false
+mesh = SubResource("CapsuleMesh_8tegq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=793978656]
+shape = SubResource("CapsuleShape3D_7p1mj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=935559751]
+transform = Transform3D(0.8414524, 0, 0, 0, 0.26948762, 0, 0, 0, 1, 0, 0.5311843, -0.70642555)
+visible = false
+mesh = SubResource("BoxMesh_7p1mj")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=945904473]
+path_desired_distance = 2.0
+avoidance_enabled = true
+debug_path_custom_color = Color(0.5388803, 0.25187063, 0.14874479, 1)
+
+[node name="chasecast" type="RayCast3D" parent="." unique_id=1857831746]
+transform = Transform3D(0.6154834, 0, 0, 0, -1.1713921e-07, -0.7233136, 0, 2.6798327, -3.161704e-08, 0, 0.80110687, 0.16927087)
+
+[node name="chasecast3" type="RayCast3D" parent="." unique_id=531791719]
+transform = Transform3D(0.6154834, 0, 0, 0, -1.1713921e-07, -0.7233136, 0, 2.6798327, -3.161704e-08, 0, 0.80110687, 0.16927087)
+target_position = Vector3(-1, -1, 0)
+
+[node name="chasecast4" type="RayCast3D" parent="." unique_id=768227857]
+transform = Transform3D(0.6154834, 0, 0, 0, -1.1713921e-07, -0.7233136, 0, 2.6798327, -3.161704e-08, 0, 0.80110687, 0.16927087)
+target_position = Vector3(-3, -1, 0)
+
+[node name="chasecast5" type="RayCast3D" parent="." unique_id=1004160641]
+transform = Transform3D(0.6154834, 0, 0, 0, -1.1713921e-07, -0.7233136, 0, 2.6798327, -3.161704e-08, 0, 0.80110687, 0.16927087)
+target_position = Vector3(3, -1, 0)
+
+[node name="chasecast2" type="RayCast3D" parent="." unique_id=425624593]
+transform = Transform3D(0.6154834, 0, 0, 0, -1.1713921e-07, -0.7233136, 0, 2.6798327, -3.161704e-08, 0, 0.80110687, 0.16927087)
+target_position = Vector3(1, -1, 0)
+
+[node name="jessy" parent="." unique_id=1716020034 instance=ExtResource("2_md0e3")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.015429497, -0.36322778, -0.034784555)
+
+[node name="head" parent="jessy" index="0" unique_id=415680828]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9904299, 0.13801503, 0, -0.13801502, 0.99043006, 0, 1.2200758, 0)
+
+[node name="Sphere" parent="jessy/body" parent_id_path=PackedInt32Array(1716020034, 1987336064) index="0" unique_id=1438951613]
+transform = Transform3D(0.49135956, 0, 0, 0, 1, 0, 0, 0, 0.5112838, -0.06598828, -0.8865874, 0)
+
+[node name="upper_r_arm" parent="jessy/body" parent_id_path=PackedInt32Array(1716020034, 1987336064) index="1" unique_id=2015207528]
+transform = Transform3D(0.6287097, 0.7776398, -1.0478121e-08, -0.77360934, 0.6254511, -0.10168136, -0.07907148, 0.06392808, 0.9948168, 0.23137182, -0.14029443, -0.014339656)
+
+[node name="lower_arm" parent="jessy/body/upper_r_arm" index="1" unique_id=266707298]
+transform = Transform3D(0.931494, 0.3637551, 0, -0.36375508, 0.9314941, 0, 0, 0, 0.9999999, 0.640563, -5.9604645e-08, 0)
+
+[node name="stab_sound2" type="AudioStreamPlayer3D" parent="jessy/body/upper_r_arm/lower_arm/Sphere_005/knife" parent_id_path=PackedInt32Array(1716020034, 1482590738) index="2" unique_id=313587281]
+stream = ExtResource("3_4ra3w")
+max_distance = 10.0
+bus = &"sfx"
+
+[node name="upper_l_arm" parent="jessy/body" parent_id_path=PackedInt32Array(1716020034, 1987336064) index="2" unique_id=1668600196]
+transform = Transform3D(0.58327186, -0.8122768, -3.0259668e-09, 0.80806684, 0.5802487, -0.10168136, 0.08259343, 0.059307877, 0.9948168, -0.38948953, -0.13539147, -0.013838522)
+
+[node name="lower_arm" parent="jessy/body/upper_l_arm" index="1" unique_id=491266431]
+transform = Transform3D(0.9384684, -0.34536356, 0, 0.34536356, 0.9384684, 0, 0, 0, 0.99999994, -0.61137605, -0.046141863, 0)
+
+[node name="jumpscare_cam" type="Camera3D" parent="." unique_id=1349035855]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1.6647164e-08, 0.708699, -1.1336156)
+fov = 83.41156
+
+[node name="killcast" type="Node3D" parent="." unique_id=1732793050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.72044617, 0, 0, 0)
+
+[node name="killcast" type="RayCast3D" parent="killcast" unique_id=634205903]
+transform = Transform3D(0.6154834, 0, 0, 0, -8.4983476e-08, -0.72331375, 0, 1.9441953, -3.161705e-08, 0, -0.46867102, -0.071483016)
+enabled = false
+
+[node name="jumpscare" type="AudioStreamPlayer3D" parent="." unique_id=278290447]
+stream = ExtResource("5_c4w8v")
+unit_size = 4.0
+
+[node name="footstep" type="Timer" parent="." unique_id=108252860]
+
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+
+[editable path="jessy"]

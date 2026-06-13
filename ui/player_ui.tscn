@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dlipl4xoket48"]
+
+[ext_resource type="Texture2D" uid="uid://dvyp4s07q5cnv" path="res://assets/textures/interact_sign.png" id="1_cfom6"]
+[ext_resource type="Script" uid="uid://dwreucc8e1lfx" path="res://script/player_ui.gd" id="1_ehg4m"]
+[ext_resource type="PackedScene" uid="uid://dwltfc6wtgvuk" path="res://scenes/pause_menu.tscn" id="2_vq5xy"]
+[ext_resource type="PackedScene" uid="uid://d3sbm041pkflv" path="res://ui/safe_ui.tscn" id="3_lp0io"]
+[ext_resource type="PackedScene" uid="uid://bcymypimbubnt" path="res://ui/task_ui.tscn" id="4_iwa1g"]
+[ext_resource type="PackedScene" uid="uid://cmg7nb3miq7d8" path="res://ui/settings.tscn" id="7_f7sc3"]
+[ext_resource type="PackedScene" uid="uid://bnpm8k4rdvxbu" path="res://ui/controls.tscn" id="7_hff70"]
+
+[sub_resource type="Animation" id="Animation_lp0io"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_ui/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ykvpg"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade_ui/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hff70"]
+_data = {
+&"RESET": SubResource("Animation_lp0io"),
+&"fade": SubResource("Animation_ykvpg")
+}
+
+[node name="player_ui" type="Control" unique_id=1646500701]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ehg4m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1471946398]
+
+[node name="crosshair" type="CenterContainer" parent="CanvasLayer" unique_id=1005200471]
+offset_right = 1150.0
+offset_bottom = 642.0
+
+[node name="crosshairtex" type="TextureRect" parent="CanvasLayer/crosshair" unique_id=783152728]
+layout_mode = 2
+texture = ExtResource("1_cfom6")
+
+[node name="safe_ui" parent="." unique_id=135987166 instance=ExtResource("3_lp0io")]
+
+[node name="settings" parent="." unique_id=1938181472 instance=ExtResource("7_f7sc3")]
+
+[node name="pause_menu" parent="." unique_id=1852508144 instance=ExtResource("2_vq5xy")]
+
+[node name="task_ui" parent="." unique_id=1530562845 instance=ExtResource("4_iwa1g")]
+
+[node name="fade_ui" type="CanvasLayer" parent="." unique_id=261068210]
+layer = 2
+
+[node name="ColorRect" type="ColorRect" parent="fade_ui" unique_id=2030958566]
+offset_right = 1148.0
+offset_bottom = 653.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade_ui" unique_id=291406663]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_hff70")
+
+[node name="controls" parent="." unique_id=602899159 instance=ExtResource("7_hff70")]
+
+[connection signal="pressed" from="safe_ui/confirm" to="." method="confirm_password"]
+[connection signal="pressed" from="safe_ui/back" to="." method="exit_safe"]
+[connection signal="pressed" from="settings/Button" to="." method="close_settings"]
+[connection signal="pressed" from="pause_menu/resume" to="." method="resume_game"]
+[connection signal="pressed" from="pause_menu/main_menu" to="." method="open_main_menu"]
+[connection signal="pressed" from="pause_menu/quit" to="." method="quit_game"]
+[connection signal="pressed" from="pause_menu/resume2" to="." method="open_controls"]
+[connection signal="pressed" from="pause_menu/controls" to="." method="open_settings"]
+[connection signal="pressed" from="controls/Button" to="." method="close_controls"]
+
+[editable path="safe_ui"]
+[editable path="settings"]
+[editable path="pause_menu"]
+[editable path="controls"]

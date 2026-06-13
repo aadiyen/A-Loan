@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://jx50y6nk5rv1"]
+
+[ext_resource type="Texture2D" uid="uid://dfd7q51d3hnl3" path="res://assets/textures/metal.jpg" id="1_72qar"]
+[ext_resource type="Texture2D" uid="uid://7d6xnslwqiny" path="res://assets/models/textures/electric_shock_warning.png" id="2_k4thf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkn86"]
+albedo_texture = ExtResource("1_72qar")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ynjyl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72qar"]
+albedo_color = Color(0.23537052, 0.23537052, 0.23537052, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_k4thf"]
+
+[node name="circuit_box" type="Node3D" unique_id=1724613921]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1055800912]
+transform = Transform3D(0.8640662, 0, 0, 0, 1, 0, 0, 0, 0.113747954, 0, 0, -0.07590139)
+material_override = SubResource("StandardMaterial3D_jkn86")
+mesh = SubResource("BoxMesh_ynjyl")
+
+[node name="Decal" type="Decal" parent="MeshInstance3D" unique_id=830620154]
+transform = Transform3D(0.89010924, -0.052870873, 0.0037345162, 0.016687136, 1.0488279, -0.801378, 0.01879643, 1.5725858, 0.5345998, 0.0046775844, 0.15238284, 0.60121375)
+size = Vector3(0.89684296, 1.0202484, 0.49768066)
+texture_albedo = ExtResource("2_k4thf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1614410035]
+transform = Transform3D(0.99247515, 0, 0, 0, 1.0944841, 0, 0, 0, 0.113747954, 0, 0, -0.116389036)
+material_override = SubResource("StandardMaterial3D_jkn86")
+mesh = SubResource("BoxMesh_ynjyl")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1351501745]
+transform = Transform3D(0.112324625, 0, 0, 0, 0.31787926, 0, 0, 0, -0.03590026, 0.3637432, -0.010740638, -0.018802226)
+material_override = SubResource("StandardMaterial3D_72qar")
+mesh = SubResource("BoxMesh_k4thf")

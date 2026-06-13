@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b8r6btvsi6oa4"]
+
+[ext_resource type="Script" uid="uid://1i2lh4pgbchf" path="res://script/scene_change_trigger.gd" id="1_l8otn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d70sa"]
+
+[node name="scene_change_trigger" type="Area3D" unique_id=2018104995]
+script = ExtResource("1_l8otn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1314410306]
+shape = SubResource("BoxShape3D_d70sa")
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="enter_trigger"]

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://5xhn4r6hx6i6"]
+
+[node name="Credits" type="CanvasLayer" unique_id=1216925637]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1732075447]
+offset_right = 1159.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=365097741]
+offset_left = -469.0
+offset_top = -59.0
+offset_right = 687.0
+offset_bottom = 98.0
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]
+Credits:"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=943854668]
+offset_left = 12.0
+offset_top = 93.0
+offset_right = 316.0
+offset_bottom = 157.0
+theme_override_font_sizes/normal_font_size = 22
+text = "This game is made by:
+Aditya Kumar"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=1658570983]
+offset_left = 12.0
+offset_top = 269.0
+offset_right = 316.0
+offset_bottom = 333.0
+theme_override_font_sizes/normal_font_size = 22
+text = "Sounds are from:
+Freesound.org(CC0)"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=1384536120]
+offset_left = 12.0
+offset_top = 191.0
+offset_right = 316.0
+offset_bottom = 255.0
+theme_override_font_sizes/normal_font_size = 22
+text = "Inspired by:
+Omogonix"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="." unique_id=1149916726]
+offset_left = 12.0
+offset_top = 563.0
+offset_right = 316.0
+offset_bottom = 627.0
+theme_override_font_sizes/normal_font_size = 22
+text = "Engine:
+Godot 4.6"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="." unique_id=484793355]
+offset_left = 12.0
+offset_top = 455.0
+offset_right = 573.0
+offset_bottom = 562.0
+theme_override_font_sizes/normal_font_size = 20
+text = "[Bathtub model Danny RWDT] https://sketchfab.com/3d-models/corner-bath-untextured-6441ba6422b74be0ba70003107ecacd7"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="." unique_id=244161343]
+offset_left = 12.0
+offset_top = 349.0
+offset_right = 606.0
+offset_bottom = 463.0
+theme_override_font_sizes/normal_font_size = 20
+text = "3D Assets:
+[Toilet model  Z...]https://sketchfab.com/3d-models/g-toilet-base-38b215c40f41432b92b594ceb3cee8cf"
+
+[node name="Button" type="Button" parent="." unique_id=782912339]
+offset_left = 1093.0
+offset_top = 16.0
+offset_right = 1148.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 32
+text = "X"

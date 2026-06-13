@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://d3sbm041pkflv"]
+
+[node name="safe_ui" type="CanvasLayer" unique_id=135987166]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=585083907]
+offset_right = 1150.0
+offset_bottom = 651.0
+color = Color(0, 0, 0, 0.46666667)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=596922672]
+offset_left = 220.0
+offset_top = 108.0
+offset_right = 914.0
+offset_bottom = 348.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1890337695]
+offset_left = 382.0
+offset_top = 159.0
+offset_right = 760.0
+offset_bottom = 210.0
+theme_override_font_sizes/normal_font_size = 35
+text = "Enter Safe Password..."
+
+[node name="password" type="LineEdit" parent="." unique_id=126274850]
+offset_left = 254.0
+offset_top = 243.0
+offset_right = 880.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 50
+placeholder_text = "XXXX"
+alignment = 1
+context_menu_enabled = false
+
+[node name="confirm" type="Button" parent="." unique_id=152908230]
+offset_left = 266.0
+offset_top = 372.0
+offset_right = 443.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 40
+text = "Comfirm"
+
+[node name="back" type="Button" parent="." unique_id=1687174788]
+offset_left = 688.0
+offset_top = 372.0
+offset_right = 865.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 40
+text = "Back"

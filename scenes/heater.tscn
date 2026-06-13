@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bri2mxoixda3k"]
+
+[ext_resource type="Texture2D" uid="uid://dfd7q51d3hnl3" path="res://assets/textures/metal.jpg" id="1_48368"]
+[ext_resource type="Texture2D" uid="uid://bwukn88wjm7gk" path="res://assets/textures/water_heater.png" id="2_aqn0s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqn0s"]
+albedo_color = Color(0.82947975, 0.8294798, 0.82947975, 1)
+albedo_texture = ExtResource("1_48368")
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0fjcr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aqn0s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y6etg"]
+albedo_color = Color(0.3711189, 0.37111908, 0.37111905, 1)
+albedo_texture = ExtResource("1_48368")
+metallic = 1.0
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08v4r"]
+albedo_color = Color(0.22382358, 0.22382358, 0.22382355, 1)
+albedo_texture = ExtResource("1_48368")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0fjcr"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_48368"]
+
+[node name="heater" type="Node3D" unique_id=1862241104]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=562558996]
+transform = Transform3D(1, 0, 0, 0, 1.1557956, 0, 0, 0, 1, 0, 0.3452537, 0)
+material_override = SubResource("StandardMaterial3D_aqn0s")
+mesh = SubResource("CylinderMesh_0fjcr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=738162427]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=75939288]
+shape = SubResource("CylinderShape3D_aqn0s")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=135842463]
+transform = Transform3D(1.2492781, 0, 0, 0, 0.058318496, 0, 0, 0, 1.298991, 0, 1.5547183, 0)
+material_override = SubResource("StandardMaterial3D_y6etg")
+mesh = SubResource("CylinderMesh_0fjcr")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=903531909]
+transform = Transform3D(1.2492781, 0, 0, 0, 0.058318496, 0, 0, 0, 1.298991, 0, -0.86435485, 0)
+material_override = SubResource("StandardMaterial3D_y6etg")
+mesh = SubResource("CylinderMesh_0fjcr")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=227053988]
+transform = Transform3D(0.15951987, 0, 0, 0, 0.5962846, 0, 0, 0, 0.5451008, 0.45918852, 0.61555153, 0)
+material_override = SubResource("StandardMaterial3D_08v4r")
+mesh = SubResource("BoxMesh_0fjcr")
+
+[node name="Decal" type="Decal" parent="MeshInstance3D4" unique_id=802681377]
+transform = Transform3D(0.027659973, -0.99960923, 0.004065096, 0.022661237, -0.0034385615, -0.99973726, 0.9993607, 0.027744828, 0.022557266, 0.5552561, -0.08221084, -0.024578808)
+size = Vector3(0.9462242, 0.1821289, 0.84686434)
+texture_albedo = ExtResource("2_aqn0s")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1405285090]
+transform = Transform3D(0.06222794, 0, 0, 0, -2.3691834e-08, -0.06876156, 0, 0.54200596, -3.0056633e-09, 0.4491639, 0.6069953, 0.42657417)
+material_override = SubResource("StandardMaterial3D_08v4r")
+mesh = SubResource("CylinderMesh_48368")

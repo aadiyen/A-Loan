@@ -1,0 +1,102 @@
+[gd_scene format=4 uid="uid://dg3ax1jsa6e1d"]
+
+[ext_resource type="Texture2D" uid="uid://c7g78up5yviek" path="res://assets/textures/9b544278201b664d91539981e5b1be.jpg" id="1_6ai1l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ok31h"]
+load_path = "res://.godot/imported/stained_pine_diff_1k.jpg-729c7febf67c5678d6b0c89dca837fbf.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ca7tg"]
+albedo_color = Color(0.21806103, 0.21806103, 0.21806103, 1)
+albedo_texture = SubResource("CompressedTexture2D_ok31h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gjs3"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g7pdq"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAAAgAEAAAABAAFAAMAAgAGAAQABgAFAAQABwADAAUABgAHAAUABwABAAMAAgAIAAYACQAHAAYACQAGAAgACgAIAAIACgACAAEACAALAAkABwAMAAEACgABAAwABwAJAAwADQAKAAwACgAOAAgACgANAA4ACAAOAAsADQAMAA8ACQAPAAwADgANAA8ACQALAA8ADgAPAAsA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("kg5+D9+PAACSDoDwAAAAAJIOfg8AAAAAkg6A8N+PAABs8X4P348AAGzxgPDfjwAAbPF+DwAAAABs8YDwAAAAAP//AAAAAAAA/////wAAAAAAAAAAAAAAAP///////wAAAAD//wAAAAAAAAAA//8AAP//AAD//wAAAAD/////AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kdllw"]
+resource_name = "photo_frame_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+fB9z/Xwfc/5////9f/z//nwAA/18AAP+f/z//X////5//v/+f////X/+//1//vx+cWrz/n/+/H5ykg99jWrz/n/9//1//f99jpIP/X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8//1/3Y/+f/z//X/8//5/3Y/8f92P/X/8//x//P/9f92P/n/dj/9//P/+f/z//3/dj"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADwAOAA0ADAAQAA0ADwARAA4ADAASABAAEQAPABMAEAASABMAEQATABIAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0A"),
+"material": SubResource("StandardMaterial3D_6gjs3"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("kg5+D9+PqiqSDoDwAACqKpIOfg8AAKoqkg6A8N+Pqips8X4P348AAJIOgPDfjwAAkg5+D9+PAABs8YDw348AAAAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTVAAAAAAAA//+SDoDwAAD//wAA//8AAP//bPGA8AAA//+SDn4PAAD///////8AAP////8AAAAA//9s8X4PAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////bPF+DwAAqips8YDw34+qKmzxfg/fj6oqbPGA8AAAqiqSDn4PAAD/P2zxfg/fj/8/kg5+D9+P/z9s8X4PAAD/P2zxgPAAAAAAkg6A8N+PAABs8YDw348AAJIOgPAAAAAAqiqqKqoqqiqqKqoqqiqqKv+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTV/7//v/+//7//v/+//7//v/+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/VNVU1VTVVNVU1VTVVNVU1f///3////9/////f////3//f/8//3//P/9//z//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_g7pdq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ni5ne"]
+albedo_texture = ExtResource("1_6ai1l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lntqb"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xw57e"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAP//AAD//wAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7wg4b"]
+resource_name = "photo_frame_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray("AAD/////AAD/////AAAAAA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_lntqb"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///7///wAAAAD/v///AAD///+/AAAAAAAA/7////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xw57e")
+
+[node name="photo_frame3" type="Node3D" unique_id=1311747600]
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1360358200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.104632914, 0, 1.0551977, 0)
+material_override = SubResource("StandardMaterial3D_ca7tg")
+mesh = SubResource("ArrayMesh_kdllw")
+skeleton = NodePath("")
+metadata/extras = {
+"booleans": {
+"canvas": 0.0,
+"slice": 0.0
+},
+"scatter5": {}
+}
+
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=1818104856]
+transform = Transform3D(-0.94603777, -0.006580351, 0, 0, 0, -0.9249062, 0.003962681, -1.5709722, 0, 0, 1.0345647, -0.0037776828)
+material_override = SubResource("StandardMaterial3D_ni5ne")
+mesh = SubResource("ArrayMesh_7wg4b")
+skeleton = NodePath("")
+metadata/extras = {
+"booleans": {},
+"scatter5": {}
+}

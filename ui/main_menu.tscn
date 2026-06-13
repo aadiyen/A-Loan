@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://cpkoq6xecpnos"]
+
+[ext_resource type="Script" uid="uid://cd6omba0hlblg" path="res://ui/main_menu.gd" id="1_0dkrt"]
+[ext_resource type="Texture2D" uid="uid://bqshse0r1260c" path="res://assets/textures/editor_screenshot_2026-05-13T213322.png" id="1_t7e0r"]
+[ext_resource type="FontFile" uid="uid://dl1omj85cucef" path="res://assets/fonts/The Night Creatures.ttf" id="3_8uxxo"]
+[ext_resource type="PackedScene" uid="uid://bnpm8k4rdvxbu" path="res://ui/controls.tscn" id="3_wk0pr"]
+[ext_resource type="Texture2D" uid="uid://cc8dtccvifrn8" path="res://assets/textures/game_title.png" id="4_rmr83"]
+[ext_resource type="AudioStream" uid="uid://kldyr5i4dhfl" path="res://sounds/the_mountain-horror-375975 (1).mp3" id="6_ei257"]
+[ext_resource type="PackedScene" uid="uid://cmg7nb3miq7d8" path="res://ui/settings.tscn" id="6_p8ri8"]
+[ext_resource type="PackedScene" uid="uid://5xhn4r6hx6i6" path="res://ui/credits.tscn" id="8_ubpvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5klac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei257"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p8ri8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubpvv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_arv2f"]
+
+[node name="main_menu" type="CanvasLayer" unique_id=1496686999]
+script = ExtResource("1_0dkrt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1686942166]
+scale = Vector2(0.886886, 1)
+texture = ExtResource("1_t7e0r")
+centered = false
+
+[node name="Button" type="Button" parent="." unique_id=1124844130]
+offset_left = 522.0
+offset_top = 271.0
+offset_right = 697.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(0.88, 0.7216, 0.7216, 1)
+theme_override_fonts/font = ExtResource("3_8uxxo")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5klac")
+text = "Start Game"
+
+[node name="credits" type="Button" parent="." unique_id=1360937217]
+offset_left = 509.0
+offset_top = 461.0
+offset_right = 693.0
+offset_bottom = 524.0
+theme_override_colors/font_color = Color(0.8784314, 0.72156864, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_8uxxo")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ei257")
+text = "Credits"
+
+[node name="settings" type="Button" parent="." unique_id=859047270]
+offset_left = 544.0
+offset_top = 330.0
+offset_right = 784.0
+offset_bottom = 401.0
+scale = Vector2(0.49630034, 0.7128142)
+theme_override_colors/font_color = Color(0.8784314, 0.72156864, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_8uxxo")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxEmpty_p8ri8")
+text = "Settings"
+
+[node name="control" type="Button" parent="." unique_id=2066138714]
+offset_left = 507.0
+offset_top = 383.0
+offset_right = 699.0
+offset_bottom = 454.0
+theme_override_colors/font_color = Color(0.8784314, 0.72156864, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_8uxxo")
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ubpvv")
+text = "Controls"
+
+[node name="quit" type="Button" parent="." unique_id=1652868835]
+offset_left = 487.0
+offset_top = 538.0
+offset_right = 728.0
+offset_bottom = 609.0
+theme_override_colors/font_color = Color(0.8784314, 0.72156864, 0.72156864, 1)
+theme_override_fonts/font = ExtResource("3_8uxxo")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_arv2f")
+text = "Quit Game"
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=439718299]
+position = Vector2(626.5, 0)
+scale = Vector2(1.2066666, 1)
+texture = ExtResource("4_rmr83")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1348978241]
+stream = ExtResource("6_ei257")
+autoplay = true
+parameters/looping = true
+
+[node name="settings2" parent="." unique_id=1938181472 instance=ExtResource("6_p8ri8")]
+visible = false
+
+[node name="controls" parent="." unique_id=602899159 instance=ExtResource("3_wk0pr")]
+visible = false
+
+[node name="Credits" parent="." unique_id=1216925637 instance=ExtResource("8_ubpvv")]
+visible = false
+
+[connection signal="pressed" from="Button" to="." method="start_game"]
+[connection signal="pressed" from="credits" to="." method="show_credit"]
+[connection signal="pressed" from="settings" to="." method="open_settings"]
+[connection signal="pressed" from="control" to="." method="open_control"]
+[connection signal="pressed" from="quit" to="." method="quit_game"]
+[connection signal="pressed" from="settings2/Button" to="." method="exit_settings"]
+[connection signal="pressed" from="controls/Button" to="." method="close_control"]
+[connection signal="pressed" from="Credits/Button" to="." method="exit_credit"]
+
+[editable path="settings2"]
+[editable path="controls"]
+[editable path="Credits"]

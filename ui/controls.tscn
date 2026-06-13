@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bnpm8k4rdvxbu"]
+
+[node name="controls" type="CanvasLayer" unique_id=602899159]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=9658625]
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=760397846]
+offset_left = 35.0
+offset_top = 30.0
+offset_right = 411.0
+offset_bottom = 140.0
+theme_override_font_sizes/normal_font_size = 74
+bbcode_enabled = true
+text = "Controls:"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1072757174]
+offset_left = 35.0
+offset_top = 216.0
+offset_right = 300.0
+offset_bottom = 293.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[E] Interact"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="." unique_id=937570738]
+offset_left = 35.0
+offset_top = 291.0
+offset_right = 405.0
+offset_bottom = 368.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[Ctrl] Crouch"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="." unique_id=339989613]
+offset_left = 35.0
+offset_top = 373.0
+offset_right = 405.0
+offset_bottom = 450.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[F] Flashlight"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="." unique_id=855365926]
+offset_left = 35.0
+offset_top = 465.0
+offset_right = 405.0
+offset_bottom = 542.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[Shift] Run"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=2022682905]
+offset_left = 35.0
+offset_top = 144.0
+offset_right = 565.0
+offset_bottom = 221.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[WASD] Movement"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="." unique_id=356638496]
+offset_left = 35.0
+offset_top = 546.0
+offset_right = 565.0
+offset_bottom = 623.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[Space] Jump"
+
+[node name="Button" type="Button" parent="." unique_id=695026184]
+offset_left = 1093.0
+offset_top = 16.0
+offset_right = 1148.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 32
+text = "X"

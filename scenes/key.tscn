@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://b5mwyjwwfua0"]
+
+[ext_resource type="Script" uid="uid://g3t17t04mk25" path="res://script/code_paper.gd" id="1_fttkb"]
+[ext_resource type="Texture2D" uid="uid://dltkeasb0g25y" path="res://assets/textures/seaside_rock_diff_1k.jpg" id="1_yk2u2"]
+[ext_resource type="AudioStream" uid="uid://bn0mrsu8yfgwu" path="res://sounds/key.mp3" id="3_wy8tx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fttkb"]
+albedo_color = Color(1, 1, 0.60887164, 1)
+albedo_texture = ExtResource("1_yk2u2")
+metallic = 1.0
+roughness = 0.8
+emission_enabled = true
+emission = Color(0.18359044, 0.18359044, 0.18359044, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ndie3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yk2u2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yk2u2"]
+size = Vector3(1.3129883, 0.07763672, 0.6713257)
+
+[node name="key" type="RigidBody3D" unique_id=2022639423]
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_fttkb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2024685403]
+transform = Transform3D(0.4143915, 0, 0, 0, 0.0073292027, 0, 0, 0, 0.48563826, 0.14736867, 0.05214548, 0.012134679)
+material_override = SubResource("StandardMaterial3D_fttkb")
+mesh = SubResource("CylinderMesh_ndie3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=838340199]
+transform = Transform3D(0.70328873, 0, 0, 0, -0.008907208, 0, 0, 0, 0.14450563, 0.4935921, 0.05214548, 0.02715242)
+material_override = SubResource("StandardMaterial3D_fttkb")
+mesh = SubResource("BoxMesh_yk2u2")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1062824206]
+transform = Transform3D(6.658961e-09, 0, 0.058335986, 0, -0.005809144, 0, -0.15233926, 0, 2.5499471e-09, 0.444379, 0.05214548, 0.15075405)
+material_override = SubResource("StandardMaterial3D_fttkb")
+mesh = SubResource("BoxMesh_yk2u2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=43317646]
+transform = Transform3D(6.658961e-09, 0, 0.058335986, 0, -0.005809144, 0, -0.15233926, 0, 2.5499471e-09, 0.555208, 0.05214548, 0.094700165)
+material_override = SubResource("StandardMaterial3D_fttkb")
+mesh = SubResource("BoxMesh_yk2u2")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=18738382]
+transform = Transform3D(6.658961e-09, 0, 0.058335986, 0, -0.005809144, 0, -0.15233926, 0, 2.5499471e-09, 0.6680313, 0.05214548, 0.13677719)
+material_override = SubResource("StandardMaterial3D_fttkb")
+mesh = SubResource("BoxMesh_yk2u2")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=59797608]
+transform = Transform3D(6.658961e-09, 0, 0.058335986, 0, -0.005809144, 0, -0.15233926, 0, 2.5499471e-09, 0.78116286, 0.05214548, 0.15807948)
+material_override = SubResource("StandardMaterial3D_fttkb")
+mesh = SubResource("BoxMesh_yk2u2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1209031405]
+transform = Transform3D(0.70328873, 0, 0, 0, 1, 0, 0, 0, 0.85607594, 0.38697356, 0.056784153, 0.010593273)
+shape = SubResource("BoxShape3D_yk2u2")
+
+[node name="key_pickup" type="AudioStreamPlayer3D" parent="." unique_id=576784889]
+stream = ExtResource("3_wy8tx")
+pitch_scale = 1.2
+bus = &"sfx"
+
+[connection signal="body_entered" from="." to="." method="hit_obj"]

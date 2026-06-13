@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://smbvjknvbcmu"]
+
+[ext_resource type="Texture2D" uid="uid://bvms3knly1kor" path="res://assets/textures/stained_pine_diff_1k.jpg" id="1_72t4t"]
+[ext_resource type="Texture2D" uid="uid://dqs6drl8g6jyj" path="res://assets/textures/pillow_texture.jpg" id="1_hxjgs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxjgs"]
+albedo_color = Color(1, 1, 0.61960787, 1)
+albedo_texture = ExtResource("1_hxjgs")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ba3iu"]
+bottom_radius = 1.2
+cap_bottom = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60c0r"]
+albedo_texture = ExtResource("1_72t4t")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_72t4t"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hxjgs"]
+
+[node name="lamp" type="Node3D" unique_id=350228968]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1221033673]
+transform = Transform3D(0.8084741, 0, 0, 0, 0.52733564, 0, 0, 0, 0.81255865, 0, 0.23544371, 0)
+material_override = SubResource("StandardMaterial3D_hxjgs")
+mesh = SubResource("CylinderMesh_ba3iu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MeshInstance3D" unique_id=191564641]
+light_color = Color(0.22206801, 0.9680801, 0.85848355, 1)
+light_bake_mode = 1
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=293519745]
+transform = Transform3D(0.16899334, 0, 0, 0, 1, 0, 0, 0, 0.1789347, 0, -0.553314, 0.0021996498)
+material_override = SubResource("StandardMaterial3D_60c0r")
+mesh = SubResource("CylinderMesh_72t4t")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=764620057]
+transform = Transform3D(1, 0, 0, 0, -0.052998424, 0, 0, 0, 1, 0, -1.6060107, 0)
+material_override = SubResource("StandardMaterial3D_60c0r")
+mesh = SubResource("CylinderMesh_hxjgs")

@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://t6t51mh0yjyb"]
+
+[ext_resource type="Script" uid="uid://bn3slmlo81he5" path="res://script/door.gd" id="1_hpvv5"]
+[ext_resource type="Texture2D" uid="uid://cxt2ir7qddilr" path="res://assets/textures/worn_planks_diff_1k.jpg" id="2_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://dltkeasb0g25y" path="res://assets/textures/seaside_rock_diff_1k.jpg" id="3_83dcw"]
+[ext_resource type="AudioStream" uid="uid://djjnlkdo5xfks" path="res://sounds/dragon-studio-opening-door-sfx-454240.mp3" id="4_18pbm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83dcw"]
+albedo_texture = ExtResource("2_uvdjg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5f452"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_la1wf"]
+size = Vector3(1, 0.171875, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_la1wf"]
+albedo_color = Color(0.43211025, 0.43211025, 0.4321102, 1)
+albedo_texture = ExtResource("3_83dcw")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_uvdjg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83dcw"]
+size = Vector3(1.6486168, 3.5178947, 0.21923566)
+
+[sub_resource type="Animation" id="Animation_83dcw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uvdjg"]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_la1wf"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hinge:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18pbm"]
+_data = {
+&"RESET": SubResource("Animation_83dcw"),
+&"close": SubResource("Animation_uvdjg"),
+&"open": SubResource("Animation_la1wf")
+}
+
+[node name="door" type="Node3D" unique_id=817576046 node_paths=PackedStringArray("open_sound", "close_sound")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_hpvv5")
+open_sound = NodePath("hinge/open")
+close_sound = NodePath("hinge/open")
+
+[node name="hinge" type="Node3D" parent="." unique_id=1737479312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99469507, 1.1991156, -0.04008892)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="hinge" unique_id=1515552594]
+transform = Transform3D(2.004595, 0, 0, 0, 3.5205774, 0, 0, 0, 0.18077518, 0.99469507, -0.124200106, 0.04008892)
+material_override = SubResource("StandardMaterial3D_83dcw")
+mesh = SubResource("BoxMesh_5f452")
+skeleton = NodePath("../..")
+
+[node name="door" type="StaticBody3D" parent="hinge/MeshInstance3D" unique_id=92851845]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/MeshInstance3D/door" unique_id=1825367995]
+transform = Transform3D(1, 0, 0, 0, 5.783854, 0, 0, 0, 1, 0, 0.0056481957, 0)
+shape = SubResource("BoxShape3D_la1wf")
+
+[node name="knob" type="Node3D" parent="hinge" unique_id=1772345021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99469507, -1.1070079, 0.04008892)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="hinge/knob" unique_id=488654422]
+transform = Transform3D(0.12510648, 0, 0, 0, -1.4224563e-08, -0.17579603, 0, 0.32542008, -7.68429e-09, 0.6939348, 1.1936214, 0)
+material_override = SubResource("StandardMaterial3D_la1wf")
+mesh = SubResource("CylinderMesh_uvdjg")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="hinge/knob" unique_id=1780899308]
+transform = Transform3D(0.19843438, 0, 0, 0, -2.2105286e-09, -0.2192088, 0, 0.050571002, -9.581922e-09, 0.6939348, 1.1936214, -0.36431336)
+material_override = SubResource("StandardMaterial3D_la1wf")
+mesh = SubResource("CylinderMesh_uvdjg")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="hinge/knob" unique_id=261746377]
+transform = Transform3D(0.19843438, 0, 0, 0, -2.2105286e-09, -0.2192088, 0, 0.050571002, -9.581922e-09, 0.6939348, 1.1936214, 0.37111688)
+material_override = SubResource("StandardMaterial3D_la1wf")
+mesh = SubResource("CylinderMesh_uvdjg")
+skeleton = NodePath("../../..")
+
+[node name="ai_trigger" type="Area3D" parent="hinge" unique_id=1564028764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99469507, -0.6154072, 0.04008892)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hinge/ai_trigger" unique_id=2010124240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039647375, 0.48394775, 0.005553424)
+shape = SubResource("BoxShape3D_83dcw")
+
+[node name="open" type="AudioStreamPlayer3D" parent="hinge" unique_id=447941861]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9078573, 0, 7.8231096e-08)
+stream = ExtResource("4_18pbm")
+unit_size = 5.0
+max_db = -5.0
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="close" type="AudioStreamPlayer3D" parent="hinge" unique_id=1112433341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9078573, 0, 7.8231096e-08)
+stream = ExtResource("4_18pbm")
+unit_size = 5.0
+max_db = -5.0
+max_distance = 30.0
+bus = &"sfx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=913537260]
+libraries/ = SubResource("AnimationLibrary_18pbm")
+
+[connection signal="body_entered" from="hinge/ai_trigger" to="." method="ai_enable_door"]
+[connection signal="body_exited" from="hinge/ai_trigger" to="." method="disable_door"]
