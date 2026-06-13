@@ -63,7 +63,7 @@ In-game settings menu to adjust graphics quality, FPS cap, anti-aliasing, and mo
 
 Tech Stack
 
-ToolUsageGodot 4Game engine, GDScriptBlenderAll 3D models and assetsNavigationAgent3DEnemy pathfinding and NavMeshRayCast3DEnemy vision and kill detectionAnimationPlayerDoor/drawer animations, death sequenceMovie Maker ModeIntro cutscene
+Godotengine , blender for 3D models , audacity for sounds and music
 
 
 Development Notes
@@ -80,7 +80,7 @@ Animating from the enemy's POV — building the death cutscene by placing a came
 Screenshots
 
 
-Show ImageShow ImageShow ImageShow Image
+Show ImageShow ImageShow ImageShow Image , moviemaker mode in godot for gameplay recordings
 
 
 Links
