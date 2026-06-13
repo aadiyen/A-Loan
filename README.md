@@ -78,9 +78,9 @@ Animating from the enemy's POV — building the death cutscene by placing a came
 
 <img width="540" height="330" alt="Screenshot 2026-05-16 133034" src="https://github.com/user-attachments/assets/b255384b-0869-4de3-ba22-4fa76e2e4e10" />
 
-<img width="1807" height="972" alt="Screenshot 2026-05-16 133548" src="https://github.com/user-attachments/assets/9996b57f-2060-40da-95ed-2de2da20831d" />
+<img width="540" height="330" alt="Screenshot 2026-05-16 133548" src="https://github.com/user-attachments/assets/9996b57f-2060-40da-95ed-2de2da20831d" />
 
-<img width="678" height="374" alt="Screenshot 2026-04-26 005224" src="https://github.com/user-attachments/assets/959572a7-63e2-4446-9bff-43924d109b2f" />
+<img width="540" height="330" alt="Screenshot 2026-04-26 005224" src="https://github.com/user-attachments/assets/959572a7-63e2-4446-9bff-43924d109b2f" />
 
 
 <img width="1877" height="975" alt="Screenshot 2026-05-01 134526" src="https://github.com/user-attachments/assets/922df689-f886-479b-b97f-14886d982953" />
