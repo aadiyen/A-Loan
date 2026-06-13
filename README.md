@@ -76,7 +76,7 @@ RNG for both puzzles and patrol — using the same randomized logic for key/pass
 Animating from the enemy's POV — building the death cutscene by placing a camera directly in front of a duplicate enemy model in a separate scene was the most satisfying part of the project. Tweaking the camera shake during the stabbing gave it a real visceral feel.
 
 
-<img width="1823" height="960" alt="Screenshot 2026-05-16 133034" src="https://github.com/user-attachments/assets/b255384b-0869-4de3-ba22-4fa76e2e4e10" />
+<img width="540" height="330" alt="Screenshot 2026-05-16 133034" src="https://github.com/user-attachments/assets/b255384b-0869-4de3-ba22-4fa76e2e4e10" />
 
 <img width="1807" height="972" alt="Screenshot 2026-05-16 133548" src="https://github.com/user-attachments/assets/9996b57f-2060-40da-95ed-2de2da20831d" />
 
