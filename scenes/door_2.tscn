@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cm32a2w3cuwo2"]
 
-[ext_resource type="Script" uid="uid://cc6igegoegw8e" path="res://door_3.gd" id="1_12tgo"]
+[ext_resource type="Script" uid="uid://cc6igegoegw8e" path="res://script/door_3.gd" id="1_12tgo"]
 [ext_resource type="Texture2D" uid="uid://cxt2ir7qddilr" path="res://assets/textures/worn_planks_diff_1k.jpg" id="2_fabj8"]
 [ext_resource type="Texture2D" uid="uid://dltkeasb0g25y" path="res://assets/textures/seaside_rock_diff_1k.jpg" id="3_12tgo"]
 [ext_resource type="AudioStream" uid="uid://djjnlkdo5xfks" path="res://sounds/dragon-studio-opening-door-sfx-454240.mp3" id="4_m17xr"]

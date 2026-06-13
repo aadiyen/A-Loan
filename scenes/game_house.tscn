@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dd6w4d8rjby45" path="res://scenes/photo_frame_2.tscn" id="18_0x1tg"]
 [ext_resource type="PackedScene" uid="uid://dg3ax1jsa6e1d" path="res://scenes/photo_frame_3.tscn" id="19_715qb"]
 [ext_resource type="PackedScene" uid="uid://cm32a2w3cuwo2" path="res://scenes/door_2.tscn" id="20_wftn2"]
-[ext_resource type="Script" uid="uid://cc6igegoegw8e" path="res://door_3.gd" id="21_6bvj2"]
+[ext_resource type="Script" uid="uid://cc6igegoegw8e" path="res://script/door_3.gd" id="21_6bvj2"]
 [ext_resource type="Texture2D" uid="uid://cxt2ir7qddilr" path="res://assets/textures/worn_planks_diff_1k.jpg" id="22_b4qjo"]
 [ext_resource type="AudioStream" uid="uid://djjnlkdo5xfks" path="res://sounds/dragon-studio-opening-door-sfx-454240.mp3" id="23_cufqi"]
 
